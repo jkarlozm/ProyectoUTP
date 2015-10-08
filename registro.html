@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>	
+	<TITLE>Registro</TITLE>	
+	
+   <script 	type="text/javascript" src="jquery-1.10.1.min.js"></script>
+   
+   <script>
+   function proregistro()
+   {
+		var via = $('#viaje').val();
+		var origen = $('#ori').val();
+		var destino = $('#des').val();		
+		var tviaje = $('#tvia').val();
+		var hsalida = $('#hsal').val();
+		var fsalida = $('#fsal').val();
+		var pboleto = $('#pbol').val();
+		var nautobus = $('#naut').val();
+		var lautobus = $('#laut').val();
+		var foto = $('#fau').val();
+		var canti = $('#canexis').val();
+		
+		var parametros={"v":via, "o":origen, "d":destino, "tv":tviaje, "hs":hsalida, 
+		"fs":fsalida, "pb":pboleto, "nau":nautobus, "la":lautobus, "f":foto, "c":canti};
+		$.ajax(
+		{
+			data: parametros,
+			url: 'registro.php',
+			type: 'post',
+			success:function(response)
+			{
+				$('#resultado').html(response);
+			}
+		});
+	}
+	</script>
+	
+</head>
+<body>
+
+<form class="contacto">	
+		
+			<div><label>Viaje:</label> <input type ="text" name="caja_texto" id="viaje" /></div>
+		
+			<div><label>Origen:</label> <input type ="text" name="caja_texto" id="ori" /></div>
+		
+			<div><label>Destino:</label> <input type ="text" name="caja_texto" id="des" /></div>
+		
+			<div><label>Tiempo de Viaje:</label> <input type ="text" name="caja_texto" id="tvia" /></div>
+		
+			<div><label>Hora de Salida:</label> <input type ="text" name="caja_texto" id="hsal" /></div>
+		
+			<div><label>Fecha de salida:</label> <input type ="date" name="caja_texto" id="fsal" /></div>
+			
+			<div><label>Foto Autobus:</label> <input type ="text" name="caja_texto" id="fau" /></div>
+		
+			<div><label>Precio del Boleto:</label> <input type ="text" name="caja_texto" id="pbol" /></div>
+		
+			<div><label>Numero del Autobus:</label> <input type ="text" name="caja_texto" id="naut" /></div>
+		
+			<div><label>Linea del autobus:</label> <input type ="text" name="caja_texto" id="laut" /></div>
+			
+			<div><label>Cantidad Existente:</label> <input type ="text" name="caja_texto" id="canexis" /></div>
+		
+			<div><input type ="button" onclick="proregistro()" value="Registrar" name="btn"/></div>
+		
+		</br> <div id="resultado"></div>
+	
+</form>
+
+</body>
+</html>
