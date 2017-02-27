@@ -1,27 +1,45 @@
-<?php
-	session_start();
-?>
+<!doctype html>
+<html class="no-js" lang="esp">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Bienvenido</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <?php include_once 'include/incCabecera.php'; ?>
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>index</title>
-<meta name="generator" content="WYSIWYG Web Builder 8 - http://www.wysiwygwebbuilder.com">
-<LINK REL=StyleSheet HREF="hojastylo/styloindex.css" TYPE="text/css" MEDIA=screen>
-</head>
-<body>
-<div id="space"><br></div>
-<div id="container">
-<div id="wb_Shape1" style="position:absolute;left:100px;top:100px;width:790px;height:570px;opacity:0.65;-moz-opacity:0.65;-khtml-opacity:0.65;filter:alpha(opacity=65);z-index:3;">
-<img src="images/img0001.gif" id="Shape1" alt="" style="border-width:0;width:790px;height:570px;"></div>
-<div id="wb_Form1" style="position:absolute;left:596px;top:452px;width:405px;height:265px;z-index:4;">
-<form name="registro" method="post" action="acceso.php" id="Form1">
-<input type="password" id="txtpw" style="position:absolute;left:12px;top:132px;width:161px;height:28px;line-height:28px;z-index:0;" name="password" value="" maxlength="30" autocomplete="off" placeholder="Contrase&#241;a">
-<input type="text" id="txtus" style="position:absolute;left:12px;top:88px;width:161px;height:28px;line-height:28px;z-index:1;" name="user" value="" maxlength="30" autocomplete="off" placeholder="Usuario">
-<input type="submit" id="Button1" name="login" value="Entrar" style="position:absolute;left:51px;top:190px;width:96px;height:36px;z-index:2;">
-</form>
-</div>
-</div>
-</body>
+        <div class="contenedor">
+        	<header>
+        		<div class="bienvenida text-center">
+        			<div class="page-header">
+        				<h1>Hola, Welcome! <small>al inicio de tu gran viaje</small></h1>
+        			</div>        			
+        			<div class="panel panel-primary">
+        				<div class="panel-heading">
+        					<div class="panel-title text-center text-capitalize">ingresa</div>
+        				</div>
+        				<div class="panel-body">
+        					<div id="mensajeSesion"></div>        					
+        					<div class="form-group">
+        						<input type="text" class="form-control" placeholder="Usuario" id="userLogin">
+        					</div>
+        					<div class="form-group">
+        						<input type="password" class="form-control" placeholder="Contraseña" id="passLogin">
+        					</div>
+        				</div>
+        				<div class="panel-footer">
+        					<button class="btn btn-default" type="button" id="login">Ingresar</button>
+        				</div>
+        			</div>
+        		</div>
+        	</header>
+        </div> <!-- /.contenedor -->        
+
+    	<?php include_once 'include/incPie.php'; ?>
+    </body>
 </html>
